@@ -5,6 +5,7 @@ services:
         image: 'laravelsail/php80-composer:latest'
         volumes:
             - '.:/var/www/html'
+        working_dir: /var/www/html
         command: php artisan schedule:work
    laravel.test:
         build:
