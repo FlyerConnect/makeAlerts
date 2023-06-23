@@ -67,8 +67,9 @@ class MakeTest extends Controller
 
     public function pingScenarios()
     {
-        $receiversEmail = ['info@reachwellapp.com','support@reachwellapp.com','benjaminzavala74@gmail.com'];
-        $receiversSms = ['720-336-9663','+529614482428'];
+        $receiversEmail = json_decode(env('EMAILS'), true);
+        $receiversSms = json_decode(env('PHONES'), true);
+        
         $allScenarios = $this->getAllScenariosFunction();
         $jsonString = json_decode($allScenarios);
         $responses = [];
